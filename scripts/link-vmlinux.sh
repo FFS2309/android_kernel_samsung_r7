@@ -370,7 +370,7 @@ fi
 # CFP instrumentation will change binary, need to be before FIPS
 if [ -n "${CONFIG_RKP_CFP}" ]; then
 	echo '  RKP_CFP : instrumenting vmlinux... '
-	"${srctree}/scripts/rkp_cfp/instrument.py" --vmlinux "${objtree}/vmlinux" \
+	python2.7 "${srctree}/scripts/rkp_cfp/instrument.py" --vmlinux "${objtree}/vmlinux" \
 	--config "${objtree}/.config"  --inplace
 fi
 
